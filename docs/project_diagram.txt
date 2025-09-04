@@ -1,0 +1,70 @@
+AgroUSSD/                  <- main project folder
+│
+├── src/                   <- your source code lives here
+│   ├── models/            <- classes (Farmer, Buyer, Crop, etc.)
+│   │   ├── user.py -- 1
+│   │   ├── farmer.py -- 3
+│   │   ├── buyer.py -- 4
+│   │   ├── product.py -- 2
+│   │   └── crop.py -- 5
+│   │
+│   ├── services/          <- logic (user service, market service, etc.)
+│   │   ├── user_service.py -- 8
+│   │   ├── market_service.py -- 10
+│   │   ├── harvest_service.py -- 9
+│   │   └── connection_service.py -- 11
+│   │
+│   ├── interfaces/        <- menus & interaction (USSD simulation)
+│   │   ├── base_interface.py -- 12
+│   │   └── main_menu.py -- 13
+│   │
+│   ├── utils/             <- helpers (file handling, validation)
+│   │   ├── data_handler.py -- 6
+│   │   └── validators.py -- 7
+│   │
+│   └── main.py -- 14      <- main entry point (runs menus & ties all together)
+│
+├── data/                  <- storage (JSON/CSV files for crops & users)
+│
+├── tests/                 <- test files (to be created)
+│
+├── docs/                  <- documentation (system design, diagrams, notes)
+│   └── class_diagrams/
+│
+├── demo/                  <- for screenshots, demo files
+│
+├── requirements.txt       <- dependencies (currently empty, uses standard Python)
+├── setup.py               <- packaging (so you can install/run easily)
+├── run.py                 <- shortcut script to run the app
+└── README.md              <- explains the project
+
+
+-----
+
+Project Scope 
+
+
+“We’re building a USSD system for Nigerian farmers and buyers. Farmers can register, record harvests, and view crop prices. Buyers can register, view prices, and connect with farmers. This is just a **prototype** – so menus, mock data, and simple file storage are fine for now. We’re focusing on structure and teamwork, not a real telecom USSD backend yet.”*
+
+Break down features:
+
+* **User Management** → Registration & login (Farmers, Buyers)
+* **Harvest Management** → Farmers record harvests
+* **Market Prices** → View/compare crop prices (mock data first)
+* **Buyer-Farmer Connection** → Simple matching (IDs or phone)
+* **USSD Menu** → Text-based interface to navigate
+
+---
+
+## (Team Roles)
+
+Since this is collaboration, divide by **folders** (modularity makes teamwork easier):
+
+* **Models team** → Build `User`, `Farmer`, `Buyer`, `Product`, `Crop` classes.
+* **Services team** → Implement business logic (`UserService`, `MarketService`, etc.).
+* **Interface team** → Build the USSD menus (Main Menu, Farmer Menu, Buyer Menu).
+* **Utils team** → Handle data storage (`data_handler.py`) and validation.
+* **Integrator (you as leader)** → Connect all parts in `main.py`, review code, merge branches.
+
+---
+
