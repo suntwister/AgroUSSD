@@ -9,7 +9,8 @@ AgroUSSD/                  <- main project folder
 │   │   └── crop.py -- 5
 │   │
 │   ├── services/          <- logic (user service, market service, etc.)
-│   │   ├── user_service.py -- 8
+│   │   ├── 
+
 │   │   ├── market_service.py -- 10
 │   │   ├── harvest_service.py -- 9
 │   │   └── connection_service.py -- 11
