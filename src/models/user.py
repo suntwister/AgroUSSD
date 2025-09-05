@@ -16,8 +16,5 @@ class User(ABC):
     def update_contact_details(self, new_name = "", new_phone = "", new_location = ""):
         pass
 
-    @abstractmethod
-    def show_profile(self):
-        pass
-
+    
    
