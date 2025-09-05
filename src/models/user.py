@@ -6,19 +6,18 @@ class User(ABC):
         self.name = name
         self.phone = phone
         self.location = location
-        self.__pin = pin
+        self._pin = pin
 
-    # Abstract method - each type of user implements differently
     @abstractmethod
-    def authentication(self):
+    def authenticate(self, entered_pin):
         pass
 
     @abstractmethod
-    def update_contact_details(self):
+    def update_contact_details(self, new_name = "", new_phone = "", new_location = ""):
         pass
 
     @abstractmethod
-    def update_farm_details(self):
+    def show_profile(self):
         pass
 
    

@@ -7,27 +7,27 @@ class Farmer(User):
         self.farm_size = farm_size
         self.primary_crops = primary_crops
 
-    def authentication(self, entered_pin):
-        if entered_pin == self._pin:
-            return f"log in successfully"
-        return f"Invalid PIN"
-    def update_contact_details(self, new_name, new_phone, new_location):
-        if self.name:
-            self.name = new_name
-            if self.phone:
-                self.phone = new_phone 
-                if self.location:
-                    self.location = new_location
-        return f"Name :{new_name}, Phone: {new_phone}, Location:{new_location}"
-    
+    def authenticate(self, entered_pin):
+        return entered_pin == self._pin
 
-    def update_farm_details(self, new_farm_size, new_primary_crops):
-        if self.farm_size:
+    
+    def update_contact_details(self, new_name="", new_phone="", new_location=""):
+        if new_name:
+            self.name = new_name
+        if new_phone:
+            self.phone = new_phone
+        if new_location:
+            self.location = new_location
+        return "Contact updated!"
+    
+    def update_farm_details(self, new_location = "", new_farm_size = "", new_primary_crops = ""):
+        if new_location:
+            self.location = new_location
+        if new_farm_size:
             self.farm_size = new_farm_size
-            if self.primary_crops:
-                self.primary_crops = new_primary_crops 
-        return f"New Farm_size :{new_farm_size}, New Primary crops: {new_primary_crops}"
-        
+        if new_primary_crops:
+            self.primary_crops =  new_primary_crops
+        return "farm details updated!"
     
         
 
